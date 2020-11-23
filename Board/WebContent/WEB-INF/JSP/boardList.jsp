@@ -7,6 +7,24 @@
 <title>boardList</title>
 </head>
 <body>
-	boardList
+	<table>
+		<tr>
+			<th>Number</th>
+			<th>Title</th>
+		</tr>
+		<tr>
+			<td>1</td>
+			<!--                  쿼리스트링(?) 키(i_board) 키 값(1)   -->
+			<td><a href="/BoardDetail?i_board=1">Hello~</a></td>
+		</tr>
+		<tr>
+			<td>2</td>
+			<td><a href="/BoardDetail?i_board=2">Hello!</a></td>
+		</tr>
+		<tr>
+			<td>3</td>
+			<td><a href="/BoardDetail?i_board=3">Hello^^</a></td>
+		</tr>
+	</table>
 </body>
 </html>
