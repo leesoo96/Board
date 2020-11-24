@@ -6,6 +6,7 @@ import java.util.List;
 // DB와 통신(Data Access)
 public class BoardDAO {
 	
+//	BoardVO 필드만 담을 수 있다
 	private List<BoardVO> list;
 	
 	private static BoardDAO dao;
@@ -19,25 +20,31 @@ public class BoardDAO {
 		list.add(new BoardVO(3, "안녕?", "JSP!!", "11-25", "11-25"));
 	}
 	
+//	서버가 실행되면 딱 한번만 실행된다.
 	public static BoardDAO getInstatance() {
 		if(dao == null) {
 			dao = new BoardDAO();
 		}
 		return dao;
-	}
+	} // Singleton BoardDAO의 주소값을 얻기위한 메소드
 	
-//	주소값 하나만 읽어옴
-	public List<BoardVO> selBoardList(){
+//	주소값 하나만 읽어옴 - 리스트의 객체들 접근
+	public List<BoardVO> selBoardList(){ 
 		return list;
 	}
 	
-//	add된 값 읽어옴
+//	add된 값 전부 읽어옴
 	public BoardVO selBoard(int i_board) {
 		for(BoardVO vo : list) {
 			if(vo.getI_board() == i_board) {
-				return vo;
+				return vo;	
 			}
 		}
 		return null;
+	}
+	
+//	글 등록
+	public void insertBoard(BoardVO vo) {
+		list.add(vo);
 	}
 }

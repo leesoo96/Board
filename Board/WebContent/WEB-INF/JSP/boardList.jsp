@@ -13,7 +13,7 @@
 			<th>Title</th>
 		</tr>
 		<tr>
-			<td>1</td>
+			<td>1</td>		<!-- 키 값을 안주면 파싱안됨 꼭 주기!! -->
 			<!--                  쿼리스트링(?) 키(i_board) 키 값(1)   -->
 			<td><a href="/BoardDetail?i_board=1">Hello~</a></td>
 		</tr>
