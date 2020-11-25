@@ -3,8 +3,8 @@ package com.koreait.board;
 import java.util.ArrayList;
 import java.util.List;
 
-// DB와 통신(Data Access)
-public class BoardDAO {
+//  DB와 통신(Data Access)
+	public class BoardDAO {
 	
 //	BoardVO 필드만 담을 수 있다
 	private List<BoardVO> list;
