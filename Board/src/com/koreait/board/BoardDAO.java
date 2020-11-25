@@ -15,9 +15,9 @@ public class BoardDAO {
 	private BoardDAO() {
 		list = new ArrayList();
 		
-		list.add(new BoardVO(1, "안녕", "JSP..", "11-23", "11-23"));
-		list.add(new BoardVO(2, "잘가", "JSP~~", "11-24", "11-24"));
-		list.add(new BoardVO(3, "안녕?", "JSP!!", "11-25", "11-25"));
+		list.add(new BoardVO(1, "안녕1", "JSP..", "11-23", "11-23"));
+		list.add(new BoardVO(2, "안녕2", "JSP~~", "11-24", "11-24"));
+		list.add(new BoardVO(3, "안녕3", "JSP!!", "11-25", "11-25"));
 	}
 	
 //	서버가 실행되면 딱 한번만 실행된다.
@@ -46,5 +46,28 @@ public class BoardDAO {
 //	글 등록
 	public void insertBoard(BoardVO vo) {
 		list.add(vo);
+	}
+	
+//	글 삭제
+	public void delBoard(int i_board) {
+		for (BoardVO vo : list) {
+			if(vo.getI_board() == i_board) {
+				list.remove(vo);
+				return;
+			}
+		}
+/*		for(int i=0; i<list.size(); i++) {
+			BoardVO vo = list.get(i);
+			if(vo.getI_board() == i_board) {
+				list.remove(i);
+				return;
+			}
+		}   --> 인덱스 번호로 삭제하기
+*/	}
+	
+//	글 수정
+	public void upBoard(BoardVO vo) {
+		delBoard(vo.getI_board());
+		insertBoard(vo);
 	}
 }

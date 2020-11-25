@@ -9,7 +9,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-
+// 글목록 출력
 // 실무에서는 클래스이름과 어노테이션 이름을 완전히 다르게 한다. 보안상의 이유때문!
 @WebServlet("/BoardList")
 public class BoardList extends HttpServlet {
@@ -31,5 +31,4 @@ public class BoardList extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 //		form Tag 전용 방식이라고 보면 된다
 	}
-
 }
