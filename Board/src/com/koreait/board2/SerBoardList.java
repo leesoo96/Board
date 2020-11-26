@@ -14,14 +14,11 @@ public class SerBoardList extends HttpServlet {
 	
 	private static final long serialVersionUID = 1L;
        
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-/*		String boardListPath = "/WEB-INF/JSP2/boardList.jsp";
-		request.getRequestDispatcher(boardListPath).forward(request, response);
-*/		
-		Utils.forward("boardList", request, response);
-		
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {	
 		BoardDAO2 dao2 = BoardDAO2.getInstatance();
 		List<BoardDTO> list =  dao2.selBoardList();
 		request.setAttribute("list", list);
+		
+		Utils.forward("boardList", request, response);
 	}
 }

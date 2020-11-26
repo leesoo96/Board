@@ -12,6 +12,7 @@ public class BoardDAO2 {
 	private List<BoardDTO> list;
 	
 	private static BoardDAO2 dao;
+	
 
 	private BoardDAO2() {
 		list = new ArrayList<BoardDTO>();
@@ -33,10 +34,29 @@ public class BoardDAO2 {
 	} // Singleton BoardDAO의 주소값을 얻기위한 메소드
 
 	public void insBoard(BoardDTO dto) {
+		dto.setI_board(list.size() + 1);
 		list.add(dto);
 	}
 	
 	public List<BoardDTO> selBoardList(){
 		return list;
+	}
+	
+	public BoardDTO selBoard(int i_board) {
+		for (BoardDTO dto : list) {
+			if(dto.getI_board() == i_board) {
+				return dto;
+			}
+		}
+		return null;
+	}
+	
+	public void delBoard(int i_board) {
+		for (BoardDTO dto : list) {
+			if(dto.getI_board() == i_board) {
+				list.remove(dto);
+				return;
+			}
+		}
 	}
 }

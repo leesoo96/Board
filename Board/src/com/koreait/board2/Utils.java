@@ -16,4 +16,18 @@ public class Utils {
 		String jsp = String.format("/WEB-INF/JSP2/%s.jsp", path);
 		request.getRequestDispatcher(jsp).forward(request, response);
 	}
+	
+	public static int getIntParam(HttpServletRequest request, String key) {
+		String param = request.getParameter("key");
+		return parseStrToInt(param);
+	}
+	
+	public static int parseStrToInt(String val) {
+		try {
+			return Integer.parseInt(val);
+		} catch (Exception e) {
+			return 0;
+		}
+		
+	}
 }
