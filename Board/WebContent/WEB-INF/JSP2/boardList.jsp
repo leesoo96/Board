@@ -26,7 +26,6 @@
 			<th>제목</th>
 			<th>작성일</th>
 		</tr>
-	
 	<c:forEach items="${list }" var="item">
 		<tr>
 			<td>${item.i_board }</td>
