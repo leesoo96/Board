@@ -59,4 +59,14 @@ public class BoardDAO2 {
 			}
 		}
 	}
+	
+	public void upBoard(BoardDTO param) {
+		for (BoardDTO dto : list) {
+			if(dto.getI_board() == param.getI_board()) {
+				dto.setTitle(param.getTitle());
+				dto.setCtnt(param.getCtnt());
+				return;
+			}
+		}
+	}
 }

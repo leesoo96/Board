@@ -7,7 +7,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-<form action="/v2/boardReg" method="post">
+<form action="/v2/SerBoardMod" method="post">
 		<div>
 			글번호 <input type="text" name="i_board" value="${item.i_board }" readonly>
 		</div>
@@ -20,11 +20,13 @@
 			</textarea>
 		</div>
 		<div>
-			날짜 <input type="date" name="r_dt" value="${item.r_dt }">
+			날짜 <input type="date" name="r_dt" value="${item.r_dt }" readonly>
 		</div>
 		<div>
 			<input type="submit" value="확인">
+			<input type="reset" value="다시쓰기">
 		</div>
-	</form>
+</form>
+<a href="/v2/SerBoardList">back to list</a>
 </body>
 </html>
